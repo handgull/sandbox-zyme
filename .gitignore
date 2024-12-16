@@ -1,0 +1,6 @@
+*.env
+!*.example.env
+food-service/target
+food-service/.idea
+food-service/Cargo.lock
+.idea/

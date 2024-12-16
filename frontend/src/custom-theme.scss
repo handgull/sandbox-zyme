@@ -1,0 +1,44 @@
+@use "@angular/material" as mat;
+mat.$theme-ignore-duplication-warnings: true; // TODO sarebbe bello gestire meglio questa duplicazione
+
+@include mat.core();
+
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$orange-palette,
+    ),
+  )
+);
+
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$orange-palette,
+    ),
+  )
+);
+
+:root {
+  @include mat.all-component-themes($dark-theme);
+}
+
+.auto {
+  @include mat.all-component-colors($light-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+  .auto {
+    @include mat.all-component-colors($dark-theme);
+  }
+}
+
+.light {
+  @include mat.all-component-colors($light-theme);
+}
+
+.dark {
+  @include mat.all-component-colors($dark-theme);
+}

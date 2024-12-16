@@ -1,0 +1,31 @@
+{
+  "name": "zyme-business-api",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && tsc-alias",
+    "lint": "eslint \"{src,test}/**/*.{ts,js}\" --fix",
+    "formatAll": "prettier \"{src,test}/**/*.{ts,js}\" --write"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.1",
+    "@hono/oauth-providers": "^0.6.2",
+    "@hono/zod-openapi": "^0.16.3",
+    "@scalar/hono-api-reference": "^0.5.150",
+    "bcryptjs": "^2.4.3",
+    "hono": "^4.6.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.17.6",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.7.0"
+  }
+}

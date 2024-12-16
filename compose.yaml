@@ -1,0 +1,17 @@
+services:
+  backend:
+    restart: unless-stopped
+    build:
+      context: ./backend/
+      dockerfile: dev.Dockerfile
+    env_file:
+      - "./backend/.env"
+    volumes:
+      - "./backend:/workspace"
+    ports:
+      - "3000:3000"
+    networks:
+      - zyme_network
+
+networks:
+  zyme_network:

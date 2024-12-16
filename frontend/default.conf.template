@@ -1,0 +1,24 @@
+server {
+    listen ${PORT};
+    listen [::]:${PORT};
+    server_name localhost;
+    
+    resolver 127.0.0.11 ipv6=off;
+
+    root /workspace;
+
+    location ${HEALTHCHECK_PATH} {
+        return 200;
+    }
+
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_proxied any;
+    gzip_min_length 256;
+    gunzip on;
+
+    location / {
+        gzip_static on;
+        try_files $uri /index.html;
+    }
+}
